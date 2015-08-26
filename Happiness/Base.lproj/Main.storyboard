@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iCG-uL-5Tj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Happiness View Controller-->
+        <scene sceneID="dRJ-j5-Fsh">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iCG-uL-5Tj" customClass="HappinessViewController" customModule="Happiness" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="DUz-ux-37s"/>
+                        <viewControllerLayoutGuide type="bottom" id="hGk-ry-53K"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="ycu-fC-OWr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="peD-e4-fxJ" customClass="FaceView" customModule="Happiness" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GK8-AY-Uew">
+                                        <rect key="frame" x="6" y="562" width="588" height="31"/>
+                                        <connections>
+                                            <action selector="smileSliderChanged:" destination="iCG-uL-5Tj" eventType="valueChanged" id="YON-kS-ca1"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="GK8-AY-Uew" firstAttribute="bottom" secondItem="peD-e4-fxJ" secondAttribute="bottomMargin" id="GPr-AE-ruG"/>
+                                    <constraint firstItem="GK8-AY-Uew" firstAttribute="leading" secondItem="peD-e4-fxJ" secondAttribute="leadingMargin" id="K2h-Iy-8wk"/>
+                                    <constraint firstItem="GK8-AY-Uew" firstAttribute="trailing" secondItem="peD-e4-fxJ" secondAttribute="trailingMargin" id="yyK-ml-4T4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="peD-e4-fxJ" firstAttribute="bottom" secondItem="hGk-ry-53K" secondAttribute="top" id="527-ju-Y5L"/>
+                            <constraint firstItem="peD-e4-fxJ" firstAttribute="leading" secondItem="ycu-fC-OWr" secondAttribute="leading" id="Z69-xh-ib7"/>
+                            <constraint firstItem="peD-e4-fxJ" firstAttribute="top" secondItem="ycu-fC-OWr" secondAttribute="top" id="bLV-oq-kyO"/>
+                            <constraint firstAttribute="trailing" secondItem="peD-e4-fxJ" secondAttribute="trailing" id="rys-ML-ggg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myFaceView" destination="peD-e4-fxJ" id="jwU-o4-Yq8"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aPT-nP-W2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="419" y="263"/>
         </scene>
     </scenes>
 </document>
