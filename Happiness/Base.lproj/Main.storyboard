@@ -20,7 +20,7 @@
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="peD-e4-fxJ" customClass="FaceView" customModule="Happiness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GK8-AY-Uew">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GK8-AY-Uew">
                                         <rect key="frame" x="6" y="562" width="588" height="31"/>
                                         <connections>
                                             <action selector="smileSliderChanged:" destination="iCG-uL-5Tj" eventType="valueChanged" id="YON-kS-ca1"/>
@@ -33,6 +33,11 @@
                                     <constraint firstItem="GK8-AY-Uew" firstAttribute="leading" secondItem="peD-e4-fxJ" secondAttribute="leadingMargin" id="K2h-Iy-8wk"/>
                                     <constraint firstItem="GK8-AY-Uew" firstAttribute="trailing" secondItem="peD-e4-fxJ" secondAttribute="trailingMargin" id="yyK-ml-4T4"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

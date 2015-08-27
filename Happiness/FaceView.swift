@@ -8,11 +8,16 @@
 
 import UIKit
 
+@IBDesignable
 class FaceView: UIView {
 
-    var lineWidth: CGFloat = 3 { didSet { setNeedsDisplay() } }
+    @IBInspectable
+    var lineWidth: CGFloat = 25 { didSet { setNeedsDisplay() } }
+    @IBInspectable
     var color: UIColor = UIColor.blueColor() { didSet { setNeedsDisplay() } }
-    var scale: CGFloat = 0.90 { didSet { setNeedsDisplay() } }
+    @IBInspectable
+    var scale: CGFloat = 0.80 { didSet { setNeedsDisplay() } }
+    @IBInspectable
     var smiliness: Double = 0.0 { didSet {
         setNeedsDisplay() } }
     
