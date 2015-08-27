@@ -18,8 +18,7 @@ class FaceView: UIView {
     @IBInspectable
     var scale: CGFloat = 0.80 { didSet { setNeedsDisplay() } }
     @IBInspectable
-    var smiliness: Double = 0.0 { didSet {
-        setNeedsDisplay() } }
+    var smiliness: Double = 0.0 { didSet { setNeedsDisplay() } }
     
     var faceCenter: CGPoint {
         //calculated only

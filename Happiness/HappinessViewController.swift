@@ -9,7 +9,8 @@
 import UIKit
 
 class HappinessViewController: UIViewController {
-
+    
+    
     var happiness: Int = 50 { //0 is very sad and 100 is ectastic
         didSet {
             happiness = min(max(happiness,0), 100)
@@ -19,14 +20,7 @@ class HappinessViewController: UIViewController {
     }
     
     func updateUI() {
-        
+        println("in update ui" )
     }
     
-    @IBOutlet weak var myFaceView: FaceView!
-    
-    @IBAction func smileSliderChanged(sender: UISlider) {
-        let value = sender.value
-        myFaceView.setSmileValue(Double(value))
-    }
-
 }

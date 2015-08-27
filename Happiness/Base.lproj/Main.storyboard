@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iCG-uL-5Tj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Happiness View Controller-->
@@ -19,20 +18,7 @@
                         <subviews>
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="peD-e4-fxJ" customClass="FaceView" customModule="Happiness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GK8-AY-Uew">
-                                        <rect key="frame" x="6" y="562" width="588" height="31"/>
-                                        <connections>
-                                            <action selector="smileSliderChanged:" destination="iCG-uL-5Tj" eventType="valueChanged" id="YON-kS-ca1"/>
-                                        </connections>
-                                    </slider>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="GK8-AY-Uew" firstAttribute="bottom" secondItem="peD-e4-fxJ" secondAttribute="bottomMargin" id="GPr-AE-ruG"/>
-                                    <constraint firstItem="GK8-AY-Uew" firstAttribute="leading" secondItem="peD-e4-fxJ" secondAttribute="leadingMargin" id="K2h-Iy-8wk"/>
-                                    <constraint firstItem="GK8-AY-Uew" firstAttribute="trailing" secondItem="peD-e4-fxJ" secondAttribute="trailingMargin" id="yyK-ml-4T4"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="6"/>
@@ -48,9 +34,6 @@
                             <constraint firstAttribute="trailing" secondItem="peD-e4-fxJ" secondAttribute="trailing" id="rys-ML-ggg"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="myFaceView" destination="peD-e4-fxJ" id="jwU-o4-Yq8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPT-nP-W2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
