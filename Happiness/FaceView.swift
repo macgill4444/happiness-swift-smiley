@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol FaceViewDataSource: class {
+    func smilinessForFaceView(sender: FaceView) -> Double?
+}
 @IBDesignable
 class FaceView: UIView {
 
@@ -17,8 +20,6 @@ class FaceView: UIView {
     var color: UIColor = UIColor.blueColor() { didSet { setNeedsDisplay() } }
     @IBInspectable
     var scale: CGFloat = 0.80 { didSet { setNeedsDisplay() } }
-    @IBInspectable
-    var smiliness: Double = 0.0 { didSet { setNeedsDisplay() } }
     
     var faceCenter: CGPoint {
         //calculated only
@@ -27,6 +28,15 @@ class FaceView: UIView {
     
     var faceRadius: CGFloat {
         return min(bounds.size.width, bounds.size.height) / 2 * scale
+    }
+    
+    weak var dataSource: FaceViewDataSource?
+    
+    func scale(gesture: UIPinchGestureRecognizer) {
+        if gesture.state == .Changed {
+            scale = scale * gesture.scale
+            gesture.scale = 1 
+        }
     }
     
     private struct Scaling {
@@ -84,12 +94,9 @@ class FaceView: UIView {
         bezierPathForEye(.Left).stroke()
         bezierPathForEye(.Right).stroke()
         
+        var smiliness = dataSource?.smilinessForFaceView(self) ?? 0.0
         let smilePath = bezierPathForSmile(smiliness)
         smilePath.stroke()
-    }
-    
-    func setSmileValue(newValue: Double) {
-        smiliness = newValue
     }
     
 }

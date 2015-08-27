@@ -19,11 +19,15 @@
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="peD-e4-fxJ" customClass="FaceView" customModule="Happiness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="lFx-fq-SBc" appends="YES" id="8Pr-i7-7h5"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,8 +38,16 @@
                             <constraint firstAttribute="trailing" secondItem="peD-e4-fxJ" secondAttribute="trailing" id="rys-ML-ggg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="peD-e4-fxJ" id="NkW-VW-VzZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPT-nP-W2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="lFx-fq-SBc">
+                    <connections>
+                        <action selector="changeHappiness:" destination="iCG-uL-5Tj" id="tjc-E9-mbx"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="419" y="263"/>
         </scene>
